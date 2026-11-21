@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build",
+      "type": "shell",
+      "command": "C:/raylib/w64devkit/bin/g++.exe",
+      "args": [
+        "-std=c++17",
+        "main.cpp",
+        "-o",
+        "solitaire.exe",
+        "-I",
+        "C:/raylib/raylib/src",
+        "-L",
+        "C:/raylib/raylib/src",
+        "-lraylib",
+        "-lopengl32",
+        "-lgdi32",
+        "-lwinmm",
+        "-static"
+      ],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "build and run",
+      "type": "shell",
+      "command": ".\\solitaire.exe",
+      "options": { "cwd": "${workspaceFolder}" },
+      "dependsOn": "build",
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    }
+  ]
+}
